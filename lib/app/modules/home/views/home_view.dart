@@ -51,14 +51,20 @@ List<Widget> generateSlider(){
         margin: EdgeInsets.all(5),
         child: ClipRRect(
           borderRadius: BorderRadius.all(Radius.circular(10)),
-          child: CachedNetworkImage(
-            imageUrl: item['image_thumbnail_path'],
-            fit: BoxFit.cover,
-            width: Get.width,
-            placeholder: (context,url)=>Container(
-              color: Colors.grey,
+          child: InkWell(
+            onTap: (){
+              print(item['image_thumbnail_path']);
+              print(item['network']);
+            },
+            child: CachedNetworkImage(
+              imageUrl: item['image_thumbnail_path'],
+              fit: BoxFit.cover,
+              width: Get.width,
+              placeholder: (context,url)=>Container(
+                color: Colors.grey,
+              ),
+              errorWidget: (context,url,error)=>Icon(Icons.error, color: Colors.red),
             ),
-            errorWidget: (context,url,error)=>Icon(Icons.error, color: Colors.red),
           ),
         ),
       ),
