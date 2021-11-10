@@ -31,8 +31,15 @@ class HomeView extends GetView<HomeController> {
                 options: CarouselOptions(
                   autoPlay: true,
                   aspectRatio: 2.0,
-                  enlargeCenterPage: true,
-                  enlargeStrategy: CenterPageEnlargeStrategy.height
+                  enlargeCenterPage: false,
+                  enlargeStrategy: CenterPageEnlargeStrategy.height,
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  scrollDirection: Axis.horizontal,
+                  viewportFraction: 1,
+
+
+
+
 
                 )
             );
